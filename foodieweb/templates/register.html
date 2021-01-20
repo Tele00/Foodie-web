@@ -1,0 +1,33 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Register
+{% endblock %}
+
+{% block main %}
+     <div class="wrapper fadeInDown">
+  <div id="formContent">
+    <!-- Tabs Titles -->
+
+
+    <div class="fadeIn first">
+        <p></p>
+    </div>
+
+
+    <!-- Login Form -->
+    <form  action="/register" method="post">
+      <input type="text" id="login" class="fadeIn second" name="username" placeholder="Username">
+      <input type="password" id="password" class="fadeIn third" name="password" placeholder="Password">
+      <input type="password" id="password" class="fadeIn third" name="passwordagain" placeholder="Password Confirmation">
+      <input type="submit" class="fadeIn fourth btn btn-success" value="Register">
+    </form>
+
+    <!-- Remind Passowrd -->
+    <div id="formFooter">
+      <a class="underlineHover" href="/login">Already have an account? Log In</a>
+    </div>
+
+  </div>
+</div>
+{% endblock %}

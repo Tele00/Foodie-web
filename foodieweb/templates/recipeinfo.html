@@ -1,0 +1,17 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Log In
+{% endblock %}
+
+{% block main %}
+  <img src="{{ recipe["image"] }}" alt="recipepix">
+  <h1><strong>{{ recipe["title"] }}</strong></h2>
+  <h4>Recipe by {{ recipe["sourceName"] }}.</h4>
+  <p>Ready In {{ recipe["readyInMinutes"] }} minutes.</p>
+  <p>Servings: {{ recipe["servings"] }}</p>
+  <p>Health Score : {{ recipe["healthScore"] }}</p>
+  <p>Food Rating: {{ recipe["spoonacularScore"] }}</p>
+  <a href="{{ recipe["sourceUrl"] }}" class="btn btn-success" target="_blank">View Recipe Instructions</a>
+
+{% endblock %}

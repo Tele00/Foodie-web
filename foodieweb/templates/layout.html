@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+    <head>
+
+        <!-- Required meta tags -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+        <!-- documentation at http://getbootstrap.com/docs/4.1/, alternative themes at https://bootswatch.com/ -->
+        <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" rel="stylesheet">
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.bundle.min.js" rel="stylesheet">
+        <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+
+        <!-- https://favicon.io/emoji-favicons/money-mouth-face/ -->
+        <link href="/static/favicone.ico" rel="icon">
+
+        <link href="/static/styles.css" rel="stylesheet">
+
+        <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+
+        <title>Foodie web: {% block title %}{% endblock %}</title>
+
+    </head>
+
+    <body>
+
+        <nav class="navbar navbar-light bg-light navbar-expand-md border" >
+            <a class="navbar-brand" href="/"><span class="black">foodie web</span><span class="green">.</span>
+            <button aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler" data-target="#navbar" data-toggle="collapse" type="button">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbar">
+                {% if session.user_id %}
+                    <ul class="navbar-nav mr-auto mt-2">
+                        <li class="nav-item"><a class="nav-link" href="/quote"></a></li>
+                        <li class="nav-item"><a class="nav-link" href="/">Search</a></li>
+                        <li class="nav-item"><a class="nav-link" href="/wiyf">Whats In Your Fridge</a></li>
+                    </ul>
+
+                        <button class="btn btn-outline-success ml-auto mt-2 navbar-btn">
+                            <a class="nav-link" href="/logout">Log Out</a></li>
+                        </button>
+                {% else %}
+                    <ul class="navbar-nav ml-auto mt-2">
+                        <li class="nav-item"><a class="nav-link" href="/quote"></a></li>
+                        <li class="nav-item"><a class="nav-link" href="/register">Register</a></li>
+                        <li class="nav-item"><a class="nav-link" href="/login">Log In</a></li>
+                    </ul>
+                {% endif %}
+            </div>
+        </nav>
+
+        {% if get_flashed_messages() %}
+            <header>
+                <div class="alert alert-primary border text-center" role="alert">
+                    {{ get_flashed_messages() | join(" ") }}
+                </div>
+            </header>
+        {% endif %}
+
+        <main class="container p-5">
+            {% block main %}{% endblock %}
+        </main>
+
+        <div class="container">
+            {%  block div %}{% endblock%}
+        </div>
+
+        <footer class="small text-center text-muted">
+            Data provided for free by <a href="https://iextrading.com/developer">Spoonacular</a>. View <a href="https://iextrading.com/api-exhibit-a/">Spoonacular’s Terms of Use</a>.
+        </footer>
+
+    </body>
+
+</html>

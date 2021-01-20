@@ -1,0 +1,49 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Log In
+{% endblock %}
+
+{% block main %}
+   <div class="wrapper fadeInDown">
+  <div id="formContent">
+    <!-- Tabs Titles -->
+
+
+    <div class="fadeIn first">
+        <p></p>
+    </div>
+
+
+    <!-- Login Form -->
+    <form  action="/login" method="post">
+      <input type="text" id="login" class="fadeIn second" name="username" placeholder="Username">
+      <input type="password" id="password" class="fadeIn third" name="password" placeholder="Password">
+      <input type="submit" class="fadeIn fourth btn btn-success" value="Log In">
+    </form>
+
+    <!-- Remind Passowrd -->
+    <div id="formFooter">
+      <a class="underlineHover" href="/register">Don't have an account? Register</a>
+    </div>
+
+  </div>
+</div>
+
+
+
+
+
+
+
+   <!---
+    <form action="/login" method="post">
+        <div class="form-group">
+            <input autocomplete="off" autofocus class="form-control" name="username" placeholder="Username" type="text">
+        </div>
+        <div class="form-group">
+            <input class="form-control" name="password" placeholder="Password" type="password">
+        </div>
+        <button class="btn btn-success" type="submit">Log In</button>
+    </form>
+{% endblock %}

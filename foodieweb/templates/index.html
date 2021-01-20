@@ -1,0 +1,55 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Home
+{% endblock %}
+
+{% block main %}
+ <form action="/" method="post">
+          <div class="p-1 bg-light rounded rounded-pill shadow-sm mb-4">
+            <div class="input-group">
+              <input type="search" name="searchterm" placeholder="Looking for a particular recipe? Search for it! e.g pasta, salt and pepper shrimp" aria-describedby="button-addon1" class="form-control border-0 bg-light">
+              <div class="input-group-append">
+                <button id="button-addon1" type="submit" class="btn btn-link text-success"><i class="fa fa-search"></i></button>
+              </div>
+            </div>
+
+    </form>
+{% endblock %}
+
+{% block div %}
+
+<script>
+
+  function getRecipe(){
+    var myid = document.getElementById("recipeid").innerHTML;
+    window.alert(myid);
+    document.getElementById("wordid").value = id;
+    document.getElementById("recipeform").submit();
+
+  }
+
+</script>
+
+
+  <div class="container">
+    <div class="row">
+    {% for recipe in recipes %}
+    <div class="col" style="padding-top: 40px;">
+      <div class="card" style="width: 18rem; height: 27rem;">
+      <img class="card-img-top" src="{{ recipe["image"] }}" alt="recipe image">
+      <div class="card-body">
+        <h5 class="card-title">{{ recipe["title"] }}</h5>
+        <p class="card-text" style="display: none;" id="recipeid">{{ recipe["id"] }}</p>
+        <p class="card-text">Ready In {{ recipe["readyInMinutes"] }} minutes.</p>
+        <p class="card-text">By {{ recipe["sourceName"] }}</p>
+        <form id="recipeform" action="/recipeinfo" method="post"><input type="text" name="wordid" value="{{ recipe["id"] }}" style="display: none;">
+        <button class="btn btn-success" type="submit">View</button>
+        </form>
+      </div>
+      </div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+{% endblock %}

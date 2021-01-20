@@ -1,0 +1,24 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Log In
+{% endblock %}
+
+{% block main %}
+      <div class="container">
+    <div class="row">
+    <div class="col" style="padding-top: 40px;">
+      <div class="card" style="width: 18rem; height: 27rem;">
+      <img class="card-img-top" src="{{ recipe["image"] }}" alt="recipe image">
+      <div class="card-body">
+        <p class="card-text" style="display: none;" id="recipeid">{{ recipe["id"] }}</p>
+        <p class="card-text">{{ recipe["title"] }}</p>
+        <form id="recipeform" action="/recipeinfo" method="post"><input type="text" name="wordid" value="{{ recipe["id"] }}" style="display: none;">
+        <button class="btn btn-success" type="submit">View</button>
+        </form>
+      </div>
+      </div>
+      </div>
+    </div>
+  </div>
+{% endblock %}

@@ -1,0 +1,15 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    What's In Your Fridge
+{% endblock %}
+
+{% block main %}
+<form action="/wiyf" method="post">
+<div class="form-group">
+    <label for="exampleFormControlTextarea1">What's In Your Fridge?</label>
+    <textarea class="form-control" id="ingre" name="ingredients" rows="3" placeholder="Enter the ingredients in your fridge seperated by commas...example: sugar,flour,bacon,eggs"></textarea>
+  </div>
+  <button type="submit" class="btn btn-success">Find Recipe</a>
+</form>
+{% endblock %}
