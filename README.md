@@ -5,6 +5,8 @@ Users can also create an account and login into foodie web.
 Foodie Web was created with Python, Flask, HTML, CSS, Javascript, Bootstrap and SQL.
 Foodie web was created as a final project to fulfill the requirements of Harvard's CS50 (Intro to Computer Science) course.
 
+My Explainer video and visuals of foodie web : https://youtu.be/t-upc9mCEog
+
 --------------------------
 Created by Adeteleola Adebimpe In September 2020.
 
